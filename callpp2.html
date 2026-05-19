@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Support</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+
+    html, body { height: 100%; width: 100%; }
+
+    .full-page-call {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      width: 100%;
+      background: #0a0a0a;
+      color: #fff;
+      text-decoration: none;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    /* ── Banner image top ── */
+    .banner {
+      width: 100%;
+      max-height: 220px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* ── Content below banner ── */
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex: 1;
+      padding: 30px 20px 20px;
+    }
+
+    .pulse-ring {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: #1a7f3c;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      position: relative;
+      animation: pulse 1.2s infinite;
+    }
+
+    .pulse-ring::before, .pulse-ring::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      border: 3px solid #1a7f3c;
+      animation: ripple 1.8s infinite;
+    }
+    .pulse-ring::after { animation-delay: 0.9s; }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(26,127,60,0.5); }
+      50% { transform: scale(1.05); box-shadow: 0 0 0 20px rgba(26,127,60,0); }
+    }
+
+    @keyframes ripple {
+      0%   { width: 130px; height: 130px; opacity: 0.6; }
+      100% { width: 260px; height: 260px; opacity: 0; }
+    }
+
+    .phone-icon { font-size: 52px; }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #aaa;
+      margin-bottom: 10px;
+    }
+
+    .tap-hint {
+      font-size: 14px;
+      color: #1a7f3c;
+      font-weight: 600;
+      margin-bottom: 36px;
+      animation: blink 1.2s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
+    /* Call box */
+    .call-box {
+      background: #1a7f3c;
+      border-radius: 20px;
+      padding: 20px 36px;
+      box-shadow: 0 6px 30px rgba(26,127,60,0.5);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .call-box img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+
+    .call-info {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .call-box .label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .call-box .number {
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+
+    .footer-note {
+      font-size: 12px;
+      color: #333;
+      padding: 16px 0 10px;
+    }
+
+    /* ── Responsive tweaks ── */
+    @media (max-width: 400px) {
+      .banner { max-height: 160px; }
+      h1 { font-size: 22px; }
+      .call-box { padding: 16px 24px; }
+      .call-box .number { font-size: 19px; }
+    }
+
+    @media (min-width: 768px) {
+      .banner { max-height: 300px; }
+      .full-page-call { max-width: 480px; margin: 0 auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="full-page-call" href="tel:+18775136221">
+
+    <!-- Banner image — place 224.png in same folder as this HTML file -->
+    <div class="banner">
+      <img src="224.png" alt="Support Banner">
+    </div>
+
+    <div class="content">
+
+      <div class="pulse-ring">
+        <span class="phone-icon">📞</span>
+      </div>
+
+      <h1>Talk to Support Now</h1>
+      <p class="subtitle">Free consultation — no hold time</p>
+      <p class="tap-hint">👆 TAP ANYWHERE TO CALL</p>
+
+      <div class="call-box">
+        <!-- Logo image — place 223.png in same folder as this HTML file -->
+        <img src="223.png" alt="Logo">
+        <div class="call-info">
+          <div class="label">Toll Free</div>
+          <div class="number">+1 (877) 513-6221</div>
+        </div>
+      </div>
+
+      <div class="footer-note">Tap anywhere on this page to connect</div>
+
+    </div>
+
+  </a>
+
+</body>
+</html>
